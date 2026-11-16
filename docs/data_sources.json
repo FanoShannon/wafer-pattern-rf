@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "scope": "Public electrical-test wafer-map data used for image-level pattern classification. No wafer images or per-sample records are included in this metadata.",
+  "source_verification_date": "2026-11-13",
+  "label_order": [
+    "center",
+    "donut",
+    "edge_loc",
+    "edge_ring",
+    "loc",
+    "near_full",
+    "scratch",
+    "random"
+  ],
+  "pixel_encoding": {
+    "0": "outside wafer / no die",
+    "1": "passing die",
+    "2": "failing die"
+  },
+  "datasets": [
+    {
+      "id": "MixedWM38",
+      "original_repository": "https://github.com/Junliangwangdhu/WaferMap",
+      "paper": {
+        "title": "Deformable Convolutional Networks for Efficient Mixed-type Wafer Defect Pattern Recognition",
+        "doi": "10.1109/TSM.2020.3020985",
+        "url": "https://doi.org/10.1109/TSM.2020.3020985"
+      },
+      "download_page": "https://www.kaggle.com/datasets/co1d7era/mixedtype-wafer-defect-datasets",
+      "download_url": "https://www.kaggle.com/api/v1/datasets/download/co1d7era/mixedtype-wafer-defect-datasets?datasetVersionNumber=4",
+      "download_version": 4,
+      "version_date": "2025-01-08",
+      "archive": {
+        "filename": "mixedwm38_kaggle.zip",
+        "bytes": 22835813,
+        "sha256": "2d83a461291c820ee8a775316add0b2489e187cd341a3c61d51134bae33c1925"
+      },
+      "data_file": {
+        "filename": "Wafer_Map_Datasets.npz",
+        "bytes": 412387226,
+        "sha256": "a19e791c85ccd5051c080169a3d2b17902a42545cf749e9869f6c96312bcdc69"
+      },
+      "format": {
+        "maps_key": "arr_0",
+        "maps_shape": [
+          38015,
+          52,
+          52
+        ],
+        "maps_dtype": "int32",
+        "labels_key": "arr_1",
+        "labels_shape": [
+          38015,
+          8
+        ],
+        "labels_dtype": "int32",
+        "label_encoding": "multi-hot; all-zero means no assigned systematic pattern"
+      },
+      "label_order_source": "https://raw.githubusercontent.com/Junliangwangdhu/WaferMap/master/Dataset%20Figure/Single-Type.png",
+      "unique_combinations": 38,
+      "combination_type_counts": {
+        "normal": 1,
+        "single": 8,
+        "two_pattern": 13,
+        "three_pattern": 12,
+        "four_pattern": 4
+      },
+      "map_cardinality_counts": {
+        "0": 1000,
+        "1": 7015,
+        "2": 13000,
+        "3": 13000,
+        "4": 4000
+      },
+      "single_pattern_counts": {
+        "normal": 1000,
+        "center": 1000,
+        "donut": 1000,
+        "edge_loc": 1000,
+        "edge_ring": 1000,
+        "loc": 1000,
+        "near_full": 149,
+        "scratch": 1000,
+        "random": 866
+      },
+      "unexpected_die_code": {
+        "value": 3,
+        "pixel_count": 214,
+        "affected_maps": 105,
+        "affected_map_labels": {
+          "near_full": 8,
+          "random": 97
+        },
+        "author_explanation": "noise",
+        "author_explanation_url": "https://github.com/Junliangwangdhu/WaferMap/issues/4#issuecomment-2438186171",
+        "project_policy": "Quarantine affected whole maps; preserve the original file."
+      },
+      "preparation_observed": {
+        "valid_code_maps": 37910,
+        "d4_groups_after_code_filter": 36890,
+        "quarantined_label_conflict_groups": 0,
+        "seed": 42,
+        "partition": "D4-group stratified by combination, 70/15/15 before caps",
+        "caps_per_combo": {
+          "train": 200,
+          "val": 20,
+          "test": 20
+        },
+        "selected_counts": {
+          "train": 7494,
+          "val": 760,
+          "test": 760
+        },
+        "cross_split_d4_groups": 0
+      },
+      "license_displayed_by_download_host": "Data files © Original Authors",
+      "license_source": "https://www.kaggle.com/datasets/co1d7era/mixedtype-wafer-defect-datasets",
+      "license_note": "The original repository invites research use but does not supply an explicit open license. Do not assign CC0 or CC-BY to the data based on an unrelated mirror.",
+      "provenance": "The authors describe manufacturing-plant maps supplemented with GAN-generated maps to balance pattern counts.",
+      "limitations": [
+        "No per-record real-versus-generated flag, production-lot identifier or GAN-parent identifier.",
+        "D4 isolation cannot rule out shared synthetic parentage.",
+        "Random and Near-full never appear in the released mixed combinations.",
+        "Historical versions and descriptions may confuse the corrected Near-full/Random columns or counts."
+      ]
+    },
+    {
+      "id": "WM-811K",
+      "original_distribution_url": "http://mirlab.org/dataSet/public/MIR-WM811K.zip",
+      "paper": {
+        "title": "Wafer Map Failure Pattern Recognition and Similarity Ranking for Large-Scale Data Sets",
+        "doi": "10.1109/TSM.2014.2364237",
+        "url": "https://doi.org/10.1109/TSM.2014.2364237"
+      },
+      "download_page": "https://www.kaggle.com/datasets/qingyi/wm811k-wafer-map",
+      "download_url": "https://www.kaggle.com/api/v1/datasets/download/qingyi/wm811k-wafer-map?datasetVersionNumber=1",
+      "download_version": 1,
+      "archive": {
+        "filename": "wm811k_kaggle.zip",
+        "bytes": 156686283,
+        "sha256": "0e4bd4316a110a04e475a88071f5e1c7fe4303b12ee53c851d2cae4d995a93e2"
+      },
+      "data_file": {
+        "filename": "LSWMD.pkl",
+        "bytes": 2095505977,
+        "sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65"
+      },
+      "independent_digest_match": {
+        "source": "https://huggingface.co/datasets/lslattery/wafer-defect-detection",
+        "file": "LSWMD.pkl",
+        "sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65"
+      },
+      "format": {
+        "container": "legacy pandas DataFrame pickle",
+        "total_records": 811457,
+        "labeled_records": 172950,
+        "unlabeled_records": 638507,
+        "map_shape": "variable 2-D; rectangular maps are retained",
+        "columns": [
+          "waferMap",
+          "dieSize",
+          "lotName",
+          "waferIndex",
+          "trianTestLabel",
+          "failureType"
+        ]
+      },
+      "native_labeled_split_counts": {
+        "Training": 54355,
+        "Test": 118595
+      },
+      "native_labeled_lot_counts": {
+        "Training": 5809,
+        "Test": 4953
+      },
+      "native_training_test_lot_overlap": 0,
+      "preparation_observed": {
+        "seed": 42,
+        "caps_per_class": {
+          "train": 200,
+          "val": 20,
+          "test": 20
+        },
+        "selected_counts": {
+          "train": 1637,
+          "val": 169,
+          "test": 180
+        },
+        "near_full_selected_counts": {
+          "train": 37,
+          "val": 9,
+          "test": 20
+        },
+        "cross_split_lot_overlap": 0,
+        "cross_split_d4_overlap": 0,
+        "policy": "Keep native Test lots in test; assign other lots to train/validation before capping. Quarantine D4 groups crossing splits or labels."
+      },
+      "license_displayed_by_download_host": "CC0: Public Domain",
+      "license_source": "https://www.kaggle.com/datasets/qingyi/wm811k-wafer-map",
+      "provenance": "The original paper describes real-world fabrication wafer maps.",
+      "limitations": [
+        "Empty failureType is unlabeled, not the explicit none category.",
+        "none means no assigned systematic pattern, not zero failing dies.",
+        "The capped lot-disjoint test is not the complete native test benchmark.",
+        "Near-full has only 54 records in native Training; report shortfalls without duplication."
+      ]
+    }
+  ],
+  "fresh_mixed_holdout": {
+    "source_dataset": "MixedWM38",
+    "source_file_sha256": "a19e791c85ccd5051c080169a3d2b17902a42545cf749e9869f6c96312bcdc69",
+    "seed": 42,
+    "reference_caps_per_combo": {
+      "train": 200,
+      "val": 20,
+      "test": 20
+    },
+    "mixed_combinations": 29,
+    "per_combo": 20,
+    "n": 580,
+    "cardinality_counts": {
+      "2": 260,
+      "3": 240,
+      "4": 80
+    },
+    "policy": "Replay and verify the unchanged reference split; use unused original-test-pool D4 groups after excluding prepared/evaluated records; freeze validation model selection before evaluation.",
+    "limitation": "Same public source with unknown generated-parent correlations; not an independently acquired industrial dataset."
+  }
+}

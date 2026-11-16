@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wafer-pattern-rf"
+version = "0.1.0"
+description = "Reproducible wafer-map random-forest classification with spatial features and training-only composition augmentation"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.3,<3",
+  "scipy>=1.16,<2",
+  "scikit-learn>=1.7,<2",
+  "Pillow>=11,<14",
+  "matplotlib>=3.10,<4",
+  "joblib>=1.5,<2",
+  "pandas>=2.3,<4",
+]
+
+[project.scripts]
+wafer-rf = "waferbench.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["waferbench*"]
